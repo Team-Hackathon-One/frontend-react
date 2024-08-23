@@ -7,29 +7,31 @@ export default function TabTwoScreen() {
   return (
     <>
       <View style={styles.containerButtons}>
-        <Button 
-          title='Login'
-          onPress={() => router.push("/login")}
-        />
-        <Button 
-          title='Register'
-          onPress={() => router.push("/register")}
-        />
+          <Text style={styles.titleContainer}>SmartVsion</Text>
+          <View style={styles.buttonContainer}>
+            <Button 
+              title='Login'
+              onPress={() => router.push("/login")}
+            />
+            <Button 
+              title='Register'
+              onPress={() => router.push("/register")}
+            />
+          </View>
       </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  buttonContainer: {
+    margin: 20,
+    gap: 10
   },
   titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
+    textAlign: "center",
+    fontSize: 30,
+    margin: 10
   },
   containerButtons: {
     padding: 10

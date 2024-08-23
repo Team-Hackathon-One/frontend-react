@@ -3,7 +3,9 @@ import { View, Text, TextInput, Button, StyleSheet } from 'react-native'
 
 const Login = () => {
 
-const [text, setText] = useState('')
+const [email, setEmail] = useState('')
+const [password, setPassword] = useState('')
+
     return(
         <>
             <View>
@@ -12,15 +14,19 @@ const [text, setText] = useState('')
                 </Text>
                 <TextInput
                     style={styleLogin.inputStyle}
-                    onChangeText={setText}
-                    value={text}
+                    onChangeText={setEmail}
+                    value={email}
+                    placeholder='Email'
                 />
                                 <TextInput
                     style={styleLogin.inputStyle}
-                    onChangeText={setText}
-                    value={text}
+                    onChangeText={setPassword}
+                    value={password}
+                    placeholder='Password'
                 />
-                <Button title='Send' />
+                <View style={styleLogin.buttonContainer}>
+                    <Button title='Send' />
+                </View>
             </View>
         </>
     )
@@ -28,14 +34,22 @@ const [text, setText] = useState('')
 
 const styleLogin = StyleSheet.create({
     title: {
-        fontSize: 20,
-        textAlign: "center"
+        fontSize: 30,
+        textAlign: "center",
+        margin: 10
     },
+    containerInput: {
+        margin: 10
+    },  
     inputStyle: {
-        padding: 10,
-        margin: 20,
-        borderWidth:1,
+        padding: 20,
+        margin: 10,
+        borderWidth: 1,
         borderRadius: 5
+    },
+    buttonContainer: {
+        paddingHorizontal: 30,
+        paddingVertical: 10
     }
 })
 
